@@ -1,0 +1,286 @@
+Index: src/Lesson6/Solution6.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package Lesson6;\r\n\r\nimport java.util.Arrays;\r\nimport java.util.Scanner;\r\n\r\npublic class Solution6 {\r\n\r\n    public static void main(String[] args) {\r\n\r\n        // Write a program to find the index of an array element. (-1 if not found)\r\n          int[] array = {5, 88, -7, 9, 0, 12};\r\n          int[][] multidimensionalArray = {{3, 6, 9}, {4, 8, 12}};\r\n\r\n          Scanner scanner = new Scanner(System.in);\r\n          int number = scanner.nextInt();\r\n          System.out.println(getIndex(array, number));\r\n          int number2 = scanner.nextInt();\r\n          System.out.println(Arrays.toString(getDeepIndex(multidimensionalArray, number2))); // Arrays.toString is a static method of the Arrays class to print array indeces.\r\n\r\n    }\r\n\r\n    public static int getIndex(int[] arr, int value) { //Method for searching the index\r\n        int index = -1;\r\n\r\n           for (int i = 0; i < arr.length; i++) {\r\n                  if (value == arr[i]) {\r\n                     index = i;\r\n                      break;\r\n                  }\r\n           }\r\n        return index;\r\n    }\r\n\r\n    public static int[] getDeepIndex(int[][] arr, int value) { // Method for searching the index in a multi dimensional array.\r\n        int[] index = {-1, -1};\r\n\r\n        for (int i = 0; i < arr.length; i++) {\r\n            for (int j = 0; j < arr[i].length; j++) {\r\n                int x = getIndex(arr[i], value); // the getIndex method is calling\r\n                if (x != -1) {\r\n                    index[0] = i;\r\n                    index[1] = x;\r\n                }\r\n            }\r\n        }\r\n        return index;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Lesson6/Solution6.java b/src/Lesson6/Solution6.java
+--- a/src/Lesson6/Solution6.java	(revision ebefdc4e3bbbd908d1bcd47efa1e754473c25d50)
++++ b/src/Lesson6/Solution6.java	(date 1729892889151)
+@@ -5,29 +5,15 @@
+ 
+ public class Solution6 {
+ 
+-    public static void main(String[] args) {
+-
+-        // Write a program to find the index of an array element. (-1 if not found)
+-          int[] array = {5, 88, -7, 9, 0, 12};
+-          int[][] multidimensionalArray = {{3, 6, 9}, {4, 8, 12}};
+-
+-          Scanner scanner = new Scanner(System.in);
+-          int number = scanner.nextInt();
+-          System.out.println(getIndex(array, number));
+-          int number2 = scanner.nextInt();
+-          System.out.println(Arrays.toString(getDeepIndex(multidimensionalArray, number2))); // Arrays.toString is a static method of the Arrays class to print array indeces.
+-
+-    }
+-
+     public static int getIndex(int[] arr, int value) { //Method for searching the index
+         int index = -1;
+ 
+-           for (int i = 0; i < arr.length; i++) {
+-                  if (value == arr[i]) {
+-                     index = i;
+-                      break;
+-                  }
+-           }
++        for (int i = 0; i < arr.length; i++) {
++            if (value == arr[i]) {
++                index = i;
++                break;
++            }
++        }
+         return index;
+     }
+ 
+@@ -44,5 +30,22 @@
+             }
+         }
+         return index;
++    }
++    public static void main(String[] args) {
++
++        // Write a program to find the index of an array element. (-1 if not found)
++          int[] array = {5, 88, -7, 9, 0, 12};
++          int[][] multidimensionalArray = {{3, 6, 9}, {4, 8, 12}};
++
++          Scanner scanner = new Scanner(System.in);
++          int number = scanner.nextInt();
++          System.out.println(getIndex(array, number));
++          int number2 = scanner.nextInt();
++          System.out.println(Arrays.toString(getDeepIndex(multidimensionalArray, number2))); // Arrays.toString is a static method of the Arrays class to print array indeces.
++
++        //------------------------------------------------------------------------------------------------
++        // Write a program to find the number of even and odd integers in a given array of integers.
++
++
+     }
+ }
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(date 1729889414777)
++++ b/.idea/misc.xml	(date 1729889414777)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="21" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1729889414780)
++++ b/.idea/vcs.xml	(date 1729889414780)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1729889414768)
++++ b/.idea/modules.xml	(date 1729889414768)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/HomeWorksModule1.iml" filepath="$PROJECT_DIR$/HomeWorksModule1.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1729891764124)
++++ b/.idea/workspace.xml	(date 1729891764124)
+@@ -0,0 +1,153 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="80b09a83-6a3b-4dc7-8258-b6b2ce6e83f9" name="Changes" comment="First commit">
++      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="ChangesViewManager">
++    <option name="groupingKeys">
++      <option value="module" />
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <excluded-from-favorite>
++      <branch-storage>
++        <map>
++          <entry type="LOCAL">
++            <value>
++              <list>
++                <branch-info repo="$PROJECT_DIR$" source="master" />
++              </list>
++            </value>
++          </entry>
++        </map>
++      </branch-storage>
++    </excluded-from-favorite>
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 7
++}</component>
++  <component name="ProjectId" id="2nwgA2uJxipfvuY8iBSY2NOZyEW" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "Application.Lesson4.Solution4.executor": "Run",
++    "Application.Solution4.executor": "Run",
++    "Application.Solution5.executor": "Run",
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "master",
++    "kotlin-language-version-configured": "true",
++    "last_opened_file_path": "C:/Users/Richard/JuliettModule1",
++    "onboarding.tips.debug.path": "C:/Users/Richard/HomeWorksModule1/src/Main.java",
++    "project.structure.last.edited": "Project",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.2"
++  },
++  "keyToStringList": {
++    "ChangesTree.GroupingKeys": [
++      "directory",
++      "module"
++    ]
++  }
++}]]></component>
++  <component name="RunManager" selected="Application.Lesson4.Solution4">
++    <configuration name="Lesson4.Solution4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Lesson4.Solution4" />
++      <module name="HomeWorksModule1" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="Lesson4.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="Solution4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="lesson4.Solution4" />
++      <module name="HomeWorksModule1" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="lesson4.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="Solution5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="Lesson5.Solution5" />
++      <module name="HomeWorksModule1" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="Lesson5.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Application.Lesson4.Solution4" />
++        <item itemvalue="Application.Solution5" />
++        <item itemvalue="Application.Solution4" />
++      </list>
++    </recent_temporary>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="80b09a83-6a3b-4dc7-8258-b6b2ce6e83f9" name="Changes" comment="" />
++      <created>1729889406942</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1729889406942</updated>
++    </task>
++    <task id="LOCAL-00001" summary="First commit">
++      <option name="closed" value="true" />
++      <created>1729890802835</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1729890802835</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
++    <servers />
++  </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="First commit" />
++    <option name="LAST_COMMIT_MESSAGE" value="First commit" />
++  </component>
++</project>
+\ No newline at end of file
